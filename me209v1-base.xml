@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+     <splash-texture>Aircraft/ME-209-V1/me209v1-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/ME-209-V1/Sounds/me209v1-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/ME-209-V1/Models/me209v1.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/ME-209-V1/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <int type="int">0</int>
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Messerschmitt Me 209 V1</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/me209v1-menu.xml"/>
+
+  </sim>
+
+  <yasim>
+    <vg33>
+      <pilot-lb>180</pilot-lb>
+    </vg33>
+  </yasim>
+
+  <engines>
+    <engine>
+      <rpm type="double">700</rpm>
+    </engine>
+  </engines>
+
+  <input>
+    <keyboard include="Nasal/me209v1-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <me209v1>
+      <file>Aircraft/ME-209-V1/Nasal/doors.nas</file>
+      <file>Aircraft/ME-209-V1/Nasal/immat.nas</file>
+      <file>Aircraft/ME-209-V1/Nasal/liveries.nas</file>
+      <file>Aircraft/ME-209-V1/Nasal/light.nas</file>
+    </me209v1>
+  </nasal>
+
+</PropertyList>
+

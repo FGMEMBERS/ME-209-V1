@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="me209v1-jsbsim-cnf.xml"> -->
+<PropertyList include="me209v1-yasim-cnf.xml">
+
+  <sim>
+    <description>Messerschmitt Me 209 V1</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+

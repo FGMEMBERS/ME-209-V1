@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- ASI -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/airspeed/airspeed.xml</path>
+    <offsets>
+      <x-m>  0.083 </x-m>
+      <y-m> -0.090 </y-m>
+      <z-m>  0.020 </z-m>
+    </offsets>
+  </model>
+
+  <!-- AI -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> 0.083 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.040 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ALT -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> 0.083 </x-m>
+      <y-m> 0.090 </y-m>
+      <z-m> 0.020 </z-m>
+    </offsets>
+  </model>
+
+  <!-- GEAR -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/gear/gear.xml</path>
+    <offsets>
+      <x-m>  0.083 </x-m>
+      <y-m> -0.140 </y-m>
+      <z-m> -0.060 </z-m>
+    </offsets>
+  </model>
+
+  <!-- VSI -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m>  0.083 </x-m>
+      <y-m>  0.140 </y-m>
+      <z-m> -0.060 </z-m>
+    </offsets>
+  </model>
+
+  <!-- THROTTLE -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/throttle/throttle.xml</path>
+    <offsets>
+      <x-m>  0.083 </x-m>
+      <y-m>  0.210 </y-m>
+      <z-m> -0.060 </z-m>
+    </offsets>
+  </model>
+
+  <!-- FUEL 1-->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/fuel/fuelL.xml</path>
+    <offsets>
+      <x-m> 0.083 </x-m>
+      <y-m> 0.166 </y-m>
+      <z-m> 0.003 </z-m>
+    </offsets>
+  </model>
+
+  <!-- FUEL 2-->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/fuel/fuelR.xml</path>
+    <offsets>
+      <x-m> 0.083 </x-m>
+      <y-m> 0.216 </y-m>
+      <z-m> 0.003 </z-m>
+    </offsets>
+  </model>
+
+  <!-- CLOCK -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m>  0.083 </x-m>
+      <y-m> -0.175 </y-m>
+      <z-m>  0.023 </z-m>
+    </offsets>
+  </model>
+
+  <!-- COMPASS -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Interior/Panel/Instruments/compass/compass.xml</path>
+    <offsets>
+      <x-m>  0.083 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.040 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>
