@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -7,9 +7,23 @@
   <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/ME-209-V1/Models/Liveries", 10);
+      
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      
+      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
+      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
+    
+      crew_door.alias(float_0);
+      passenger_door.alias(float_1);
     </load>
+
     <unload>
       livery_update.stop();
+      crew_door.unalias();
+      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -35,6 +49,7 @@
     <object-name>tourverriere</object-name>
     <object-name>air</object-name>
     <object-name>pito</object-name>
+    
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
@@ -74,6 +89,7 @@
     <object-name>tourverriere</object-name>
     <object-name>air</object-name>
     <object-name>pito</object-name>
+    
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
@@ -83,43 +99,54 @@
     <object-name>helice</object-name>
     <object-name>trous</object-name>
     <object-name>echappes</object-name>
-
+    
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
     <emission>
       <red-prop>emission/red</red-prop>
       <green-prop>emission/green</green-prop>
       <blue-prop>emission/blue</blue-prop>
     </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
+    <object-name>fuselage</object-name>
+    <object-name>ailes</object-name>
+    <object-name>aileronG</object-name>
+    <object-name>aileronD</object-name>
+    <object-name>voletG1</object-name>
+    <object-name>voletG2</object-name>
+    <object-name>voletD2</object-name>
+    <object-name>voletD1</object-name>
+    <object-name>porteG1</object-name>
+    <object-name>porteG2</object-name>
+    <object-name>porteD2</object-name>
+    <object-name>porteD1</object-name>
+    <object-name>bol</object-name>
+    <object-name>ailes2</object-name>
+    <object-name>pate</object-name>
+    <object-name>profondeur</object-name>
+    <object-name>direction</object-name>
+    <object-name>tourverriere</object-name>
+    <object-name>air</object-name>
+    <object-name>pito</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>ailes</object-name>
     <object-name>aileronG</object-name>
@@ -158,33 +185,45 @@
     <object-name>propblur</object-name>
   </animation>
 
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>vitres</object-name>
+    <object-name>verriere</object-name>
+    <object-name>propdisc</object-name>
+    <object-name>propblur</object-name>
+  </effect>
+
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/ME-209-V1/Models/shadow.xml</path>
-  </model>
-<!--
-  <animation>
-    <type>select</type>
-    <object-name>shadowOSG</object-name>
-    <condition>
-      <equals>
-        <property>sim[0]/rendering/shadows-ai</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
--->
-  <!-- Interieur -->
-  <model>
-    <path>Aircraft/ME-209-V1/Models/Interior/interior.xml</path>
     <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
+      <x-m>  0.00 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m> -1.22 </z-m>
     </offsets>
   </model>
 
+  <!-- Interieur -->
+  <model>
+    <name>Interieur</name>
+    <path>Aircraft/ME-209-V1/Models/Interior/interior.xml</path>
+  </model>
+
+  <!-- For Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>Interieur</object-name>
+  </animation>
+
+  <!-- Cranking -->
+  <model>
+    <path>Aircraft/ME-209-V1/Models/Effects/cranking/all-cranking.xml</path>
+  </model>
+  
   <!-- Effets sur le sol -->
   <!-- Roue gauche -->
   <model>
@@ -268,6 +307,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceComplete</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>/engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -753,7 +798,7 @@
   </model>
 
   <model>
-    <path>Aircraft/ME-209-V1/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/ME-209-V1/Models/light/StrobeLight.xml</path>
     <offsets>
       <x-m> -1.374 </x-m>
       <y-m> -3.886 </y-m>
@@ -762,7 +807,7 @@
   </model>
 
   <model>
-    <path>Aircraft/ME-209-V1/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/ME-209-V1/Models/light/StrobeLight.xml</path>
     <offsets>
       <x-m> -1.364 </x-m>
       <y-m>  3.886 </y-m>
@@ -778,9 +823,23 @@
   </animation>
 
   <animation>
+    <type>pick</type>
+    <object-name>AllCanopy</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <type>rotate</type>
     <object-name>AllCanopy</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
       <entry><ind> 1 </ind><dep> -95 </dep></entry>
