@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Cranking effects -->
+  <!-- Left -->
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -2.52523 </x-m>
+      <y-m> -0.51215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -2.36523 </x-m>
+      <y-m> -0.52215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -2.20523 </x-m>
+      <y-m> -0.53215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -2.04523 </x-m>
+      <y-m> -0.54215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -1.88523 </x-m>
+      <y-m> -0.55215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -1.72523 </x-m>
+      <y-m> -0.56215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Right -->
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -2.52523 </x-m>
+      <y-m>  0.51215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -2.36523 </x-m>
+      <y-m>  0.52215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -2.20523 </x-m>
+      <y-m>  0.53215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -2.04523 </x-m>
+      <y-m>  0.54215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -1.88523 </x-m>
+      <y-m>  0.55215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Messerschmitt-BF110/Models/Effects/cranking/Left-cranking.xml</path>
+    <offsets>
+      <x-m> -1.72523 </x-m>
+      <y-m>  0.56215 </y-m>
+      <z-m>  0.09436 </z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>
