@@ -19,15 +19,15 @@ var refresh_immat = func {
     }
 }
 
-var immat_dialog = gui.Dialog.new("/sim/gui/dialogs/vg33/status/dialog",
-				  "Aircraft/Arsenal-VG33/Dialogs/immat.xml");
+var immat_dialog = gui.Dialog.new("/sim/gui/dialogs/me209v1/status/dialog",
+				  "Aircraft/ME-209-V1/Dialogs/immat.xml");
 
 setlistener("/sim/signals/fdm-initialized", func {
   if (props.globals.getNode("/sim/model/immat") == nil) {
     var immat = props.globals.getNode("/sim/model/immat",1);
     var callsign = props.globals.getNode("/sim/multiplay/callsign").getValue();
     if (callsign != "callsign") immat.setValue(callsign);
-  else immat.setValue("NR258Y");
+  else immat.setValue("F-LHBL");
   }
   refresh_immat();
   setlistener("sim/model/immat", refresh_immat, 0);

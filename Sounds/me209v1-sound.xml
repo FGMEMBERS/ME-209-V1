@@ -48,11 +48,11 @@
         <property>/engines/engine/running</property>
        <less-than> 
           <property>/engines/engine/rpm</property>
-          <value>1100</value>
+          <value>2200</value>
         </less-than>
         <greater-than> 
           <property>/engines/engine/rpm</property>
-          <value>150</value>
+          <value>50</value>
         </greater-than>
       </condition>
       <volume> 
