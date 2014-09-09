@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <description>Messerschmitt Me 209 V1 (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>0.8</fuel-fraction>
+
+    <startup>
+     <splash-texture>Aircraft/ME-209-V1/me209v1-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/ME-209-V1/Sounds/me209v1-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/ME-209-V1/Models/me209v1.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/ME-209-V1/Models/Effects/guns/submodels.xml</path>
+    </submodels>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                      <!-- 0 immat -->
+        <int type="int" n="1">  0 </int>                                      <!-- 1 immat -->
+        <int type="int" n="2">  0 </int>                                      <!-- 2 immat -->
+        <int type="int" n="3">  0 </int>                                      <!-- 3 immat -->
+        <int type="int" n="4">  0 </int>                                      <!-- 4 immat -->
+        <int type="int" n="5">  0 </int>                                      <!-- 5 immat -->
+        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
+        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
+        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
+        <float n="2" alias="/position/gear-agl-m">  0 </float>                <!-- 11 altitude for MP shadow -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>  
+        <string n="9" type="string" />                                                   <!-- string[9] reserved for bombable mode -->
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>Messerschmitt Me 209 V1</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/me209v1-menu.xml"/>
+
+  </sim>
+
+  <yasim>
+    <vg33>
+      <pilot-lb>180</pilot-lb>
+    </vg33>
+  </yasim>
+
+  <engines>
+    <engine>
+      <rpm type="double">700</rpm>
+    </engine>
+  </engines>
+
+  <input>
+    <keyboard include="Nasal/me209v1-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <doors>
+      <file>Aircraft/ME-209-V1/Nasal/doors.nas</file>
+    </doors>
+    <me209v1>
+      <file>Aircraft/ME-209-V1/Nasal/immat.nas</file>
+      <file>Aircraft/ME-209-V1/Nasal/liveries.nas</file>
+      <file>Aircraft/ME-209-V1/Nasal/light.nas</file>
+    </me209v1>
+  </nasal>
+
+</PropertyList>
+
