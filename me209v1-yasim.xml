@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Messerschmitt Me 209 V1 - 2010 Emmanuel BARANGER
+   
+     sources          : http://en.academic.ru/dic.nsf/enwiki/724643
+                        http://en.wikipedia.org/wiki/Messerschmitt_Me_209#Specifications_.28Me_209_V1.29
+
+     year             :  1938
+     wingspan         :  7.80 m      (   25 ft 7 in)
+     length           :  7.24 m      (   23 ft 9 in)
+     height           :  3.02 m      (      ft   in)
+     max speed        : 755.138 Km/h (  408 kts)
+     empty weight     :       kg     ( 4173 lbs)
+     engine           : Daimler-Benz DB 601 ARJ (1800 hp)
+-->
+
+<airplane mass="4173" >
+
+  <approach speed="80" aoa="6" >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
+    <solve-weight idx="0" weight="180"/>
+    <solve-weight idx="1" weight="0"/>
+  </approach>
+  
+  <cruise speed="390" alt="5000" >
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.8" />
+    <solve-weight idx="0" weight="180"/>
+    <solve-weight idx="1" weight="0"/>
+  </cruise>
+
+  <cockpit x="-0.780" y="0" z="0.936"/>
+
+  <fuselage ax="3.164" ay="0.0" az="0.249" bx="-3.219" by="0" bz="0.544" width="0.931" taper="0.45" midpoint="0.5"/>
+
+  <wing x="1.082" y="0" z="-0.307" 
+        chord="1.825" 
+        length="3.9" 
+        taper="0.55" 
+	dihedral="6" 
+        sweep="-3"
+	camber="0.01">
+        <stall aoa="16" width="5" peak="1.5"/>
+        <flap0 start="0.015" end="0.625" lift="1.7" drag="1.9"/>
+        <flap1 start="0.625" end="0.930" lift="1.4" drag="1.1"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="7"/>
+        <control-speed control="FLAP1" transition-time="1"/>
+  </wing>
+  
+  <hstab x="-2.911" y="0" z="0.558" 
+	 chord="0.644" 
+	 length="1.420" 
+         taper="1"
+         sweep="0"> 
+         <stall aoa="16" width="8" peak="1.5"/>
+         <flap0 start="0.0" end="1.0" lift="1.55" drag="1.3"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-3.109" y="0" z="-0.141" 
+	 chord="1.19" 
+	 length="1.640" 
+         taper="1" 
+	 sweep="0">
+         <stall aoa="14" width="4" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
+
+         <control-input axis="/controls/flight/rudder" square="true" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"  min="1" max="-1"/>
+  </vstab>
+
+  <!-- Engines   source            : http://en.wikipedia.org/wiki/Daimler-Benz_DB_601
+
+                 name              : Daimler-Benz DB 601
+                 type              : Twelve-cylinder liquid-cooled supercharged 60° inverted Vee aircraft piston engine
+                 power cruise      : 1800 hp
+                 weight            :    590 kg (1320 lb)
+                 displacement      : 33.93 L (2070.5 in3)
+                 compression       : 6.9:1
+  -->
+  <propeller x="2.373" y="0.0" z="0.249"
+             radius="1.35"
+             mass="1320"
+             moment="35"
+             cruise-speed="380"
+             cruise-alt="5000"
+             cruise-power="1600"
+             cruise-rpm="2400"
+             takeoff-power="1800"
+             takeoff-rpm="2700"
+             gear-ratio="0.5">
+             <piston-engine eng-rpm="2700"
+                            eng-power="1800"
+                            displacement="2070.5"
+                            compression="6.9"/>
+             <actionpt x="3.328" y="0.0" z="0.249"/>
+             <control-input control="THROTTLE" axis="/controls/engines/engine[0]/throttle"/>
+             <control-input control="STARTER" axis="/controls/engines/engine[0]/starter"/>
+             <control-input control="MAGNETOS" axis="/controls/engines/engine[0]/magnetos"/>
+             <control-input control="MIXTURE" axis="/controls/engines/engine[0]/mixture"/>
+  </propeller>
+
+  <!-- left main -->
+  <gear x="1.803" y="1.320" z="-1.510" 
+        compression="0.4"
+        retract-time="5"
+        spring="0.8"
+        damp="1.2"
+        sfric="1.0"
+        dfric="1.0">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-speed control="EXTEND" transition-time="5.1"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
+
+  <!-- right main -->
+  <gear x="1.803" y="-1.320" z="-1.510" 
+        compression="0.4"
+        retract-time="5"
+        spring="0.8"
+        damp="1.2"
+        sfric="1.0"
+        dfric="1.0">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-speed control="EXTEND" transition-time="5.1"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  </gear>
+
+  <!-- Tail wheel; has castering selectable by a wheel lock -->
+  <gear x="-3.164" y="0" z="-0.328"
+        compression="0.2"
+        retract-time="5"
+        spring="0.8"
+        damp="1.2"
+        sfric="1.0"
+        dfric="1.0">
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+
+        <control-speed control="EXTEND" transition-time="5.1"/>
+
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  </gear>
+
+  <!-- Fuel  -->  
+  <tank x=" 1.50" y=" 1.7" z="-0.14" capacity="210" />
+  <tank x="-1.25" y=" 0.0" z="-0.33" capacity="156" />
+  <tank x=" 1.50" y="-1.7" z="-0.14" capacity="210" />
+
+  <weight x="0.75" y="0" z="-0.5" mass-prop="/sim/weight[0]/weight-lb"/>
+  <weight x="-1.0" y="0" z="-0.5" mass-prop="/sim/weight[1]/weight-lb"/>
+
+  <!--  -->
+  <ballast x="4.23" y="0.001" z="-3.16" mass="600" />
+
+</airplane>
