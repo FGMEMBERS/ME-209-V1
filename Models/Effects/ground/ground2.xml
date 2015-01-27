@@ -13,7 +13,7 @@
         <property>/gear/gear[2]/wow</property>
         <greater-than>
           <property>/gear/gear[2]/rollspeed-ms</property>
-          <value>5</value>
+          <value>15</value>
         </greater-than>
       </and>
     </condition>
