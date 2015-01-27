@@ -13,15 +13,7 @@
           <script>aircraft.livery.dialog.toggle()</script>
         </binding>
       </item>
-      <item>
-        <label>Immatriculation</label>
-        <binding>
-          <command>nasal</command>
-          <script>me209v1.immat_dialog.toggle()</script>
-        </binding>
-      </item>
     </menu>
   </default>
 
 </PropertyList>
-
