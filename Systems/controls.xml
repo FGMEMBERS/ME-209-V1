@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <lighting>
+    <instruments-norm>1</instruments-norm>
+  </lighting>
+  
+  <flight>
+    <elevator-trim>-0.015</elevator-trim>
+  </flight>
+  
+</PropertyList>

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- <PropertyList include="me209v1-jsbsim-cnf.xml"> -->
-<PropertyList include="me209v1-yasim-cnf.xml">
+<PropertyList include="me209v1-base.xml">
 
   <sim>
     
     <description>Messerschmitt Me 209 V1 (YASim)</description>
     <author>BARANGER Emmanuel (3D/FDM)</author>
+    
+    <flight-model>yasim</flight-model>
+    <aero>me209v1-yasim</aero>
     
     <rating>
       <FDM type="int">     2 </FDM>
@@ -18,4 +20,3 @@
   </sim>
 
 </PropertyList>
-
