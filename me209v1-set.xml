@@ -9,6 +9,20 @@
     
     <flight-model>yasim</flight-model>
     <aero>me209v1-yasim</aero>
+
+    <tags>
+      <tag>messerschmitt</tag>
+      <tag>low-wing</tag>
+      <tag>tail-dragger</tag>
+      <tag>retractable-gear</tag>
+      <tag>single-engine</tag>
+      <tag>piston</tag>
+      <tag>supercharger</tag>
+      <tag>propeller</tag>
+      <tag>racer</tag>
+      <tag>1940s</tag>
+      <tag>ww2</tag>
+    </tags>
     
     <rating>
       <FDM type="int">     2 </FDM>
